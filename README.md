@@ -1,4 +1,4 @@
-<h1>Welcom to the Codex repository</h1>
+<h1>Welcom to the Codex repository: </h1> <h3>V0.3</h3>
 
 <p>
 This is a C# project.
