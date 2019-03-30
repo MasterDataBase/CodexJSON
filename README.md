@@ -10,8 +10,8 @@ The scope of this project is to make a personal Codex for every inc of D&D 3.5th
   <ul>
     <li>Create the folder</li>
     <li>Save the inc as JSON</li>
-    <li></li>
-    <li></li>
+    <li>Program as portable</li>
+    <li>Run of the program everywhere</li>
     <li></li>
   </ul>
   
