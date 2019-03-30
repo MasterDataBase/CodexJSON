@@ -117,7 +117,11 @@ namespace CreateJSON
 												string JSONresult = JsonConvert.SerializeObject(obj);
 
 												//Creamo la stringa in cui salvare e il nome del file usando il nome del PG.
-												string path = @"C:\Users\MarcoDiBlasi\Desktop\C# Let's Start\CreateJSON(Console)\JSON\" + obj.nome + ".json";
+												//string path = @"C:\Users\MarcoDiBlasi\Desktop\C# Let's Start\CreateJSON(Console)\JSON\" + obj.nome + ".json";
+
+												string path = Tool.path;
+												path = path.Replace(@"CreateJSON.exe", "");
+												path = path + obj.nome + ".json";
 
 												//Controlliamo che il file esiste, in caso contrario non sovrascriviamo
 												if (File.Exists(path))

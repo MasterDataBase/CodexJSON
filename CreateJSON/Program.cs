@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using System.Reflection;
 
 namespace CreateJSON
 {
@@ -28,6 +29,7 @@ namespace CreateJSON
 
 								public static void MenuStart()
 								{
+												//Console.WriteLine(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
 												Console.Title = "Codex v0.3";
 												Console.WriteLine("------   Welcome to the Codex   ------");
 												Console.WriteLine("---     Scegli cosa vuoi fare      ---");

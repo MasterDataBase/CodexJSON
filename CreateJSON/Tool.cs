@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 
 namespace CreateJSON
 {
@@ -13,6 +14,9 @@ namespace CreateJSON
 								//Store value
 								public static string[] role = { "Wiz", "Sacred", "Paladin", "Mage" };
 								public static string[] time = { "Round", "Hour", "Minute"};
+
+								public static string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+								//public static string path = System.Reflection.Assembly.GetEntryAssembly().Location;
 
 								//Da usare per controllare che la stringa non contenga numeri
 								public static bool CheckIsNotNumber(string exam){
@@ -71,8 +75,8 @@ namespace CreateJSON
 
 								//Continuare cambiando il punto di mount dei file JSON
 								public static void FolderCheckStartUp(){
-												string path = System.Reflection.Assembly.GetEntryAssembly().Location;
-												path = path.Replace(@"CreateJSON.exe", "");
+												//path = path.Replace(@"CreateJSON.exe", "");
+												Console.WriteLine(path);
 												//Codice preso da ReadData.GetAllJSON
 												//string[] fileEntries = Directory.GetFiles(path);
 												//for (int i = 0; i < fileEntries.Length; i++)
@@ -85,8 +89,14 @@ namespace CreateJSON
 												string[] fileFolder = Directory.GetDirectories(path);
 												if(fileFolder.Length != 0){
 																foreach (string str in fileFolder) {
-																				if(str == (path + "FolderJSON")){
+																				//Console.WriteLine(str);
+																				//Console.WriteLine(path + @"\FolderJSON");
+																				if(str == (path + @"\FolderJSON")){
 																								Console.WriteLine("Folder found!");
+																				}else{
+																								Console.WriteLine("No directory found!");
+																								Console.WriteLine("Creation directory on going");
+																								Directory.CreateDirectory(path + "FolderJSON");
 																				}
 																}
 												}else{
@@ -94,7 +104,7 @@ namespace CreateJSON
 																Console.WriteLine("Creation directory on going");
 																Directory.CreateDirectory(path + "FolderJSON");
 												}
-												Program.MenuStart();
+												//Program.MenuStart();
 								}
 
 								public static void GetTimeType(){

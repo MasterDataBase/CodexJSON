@@ -14,25 +14,35 @@ namespace CreateJSON
 				class ReadData
 				{
 								static int comodoInt;
-								static string path = @"C:\Users\MarcoDiBlasi\Desktop\C# Let's Start\CreateJSON(Console)\JSON\";
+								//static string path = @"C:\Users\MarcoDiBlasi\Desktop\C# Let's Start\CreateJSON(Console)\JSON\";
+								public static string path = Tool.path + @"\FolderJSON";
 
 								public static void GetAllJSON(){
-												string[] fileEntries = Directory.GetFiles(path);
-												for (int i = 0; i < fileEntries.Length; i++){
-																fileEntries[i] = fileEntries[i].Replace(path, "");
-																fileEntries[i] = fileEntries[i].Replace(".json", "");
-																//Console.WriteLine(fileEntries[i]);
-																Console.WriteLine("." + i + "\t" + fileEntries[i]);
-												}
-
-												Console.WriteLine("Digita il numero dell'incantesimi che vuoi consultare: ");
-												string x = Console.ReadLine();
-												while (Tool.CheckIsANumber(x))
+												try
 												{
-																x = Console.ReadLine();
+																Console.WriteLine("From ReadData: " + path);
+
+																string[] fileEntries = Directory.GetFiles(path);
+																for (int i = 0; i < fileEntries.Length; i++)
+																{
+																				fileEntries[i] = fileEntries[i].Replace(path, "");
+																				fileEntries[i] = fileEntries[i].Replace(".json", "");
+																				//Console.WriteLine(fileEntries[i]);
+																				Console.WriteLine("." + i + "\t" + fileEntries[i]);
+																}
+
+																Console.WriteLine("Digita il numero dell'incantesimi che vuoi consultare: ");
+																string x = Console.ReadLine();
+																while (Tool.CheckIsANumber(x))
+																{
+																				x = Console.ReadLine();
+																}
+																comodoInt = Convert.ToInt16(x);
+																OpenJSON(fileEntries[comodoInt]);
+												}catch(Exception err){
+																Console.WriteLine(err);
+																Console.ReadLine();
 												}
-												comodoInt = Convert.ToInt16(x);
-												OpenJSON(fileEntries[comodoInt]);
 								}
 
 								public static void OpenJSON(string inc) {
