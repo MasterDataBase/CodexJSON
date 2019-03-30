@@ -23,6 +23,6 @@ The scope of this project is to make a personal Codex for every inc of D&D 3.5th
   </ul>
   
 <h3>Utility link</h3>
-<p>Hi Everybody, I'm Mark! and I'm the proud creator of this magic item :smirk:</p>
-<p>For every info about the code, the possibile improve on the code/feature, or for every eventualy error, look for me on</p>
-<p>Skype, Linkedin, GitHub, Slack, and if you know that, on my prefered pub lol!</p>
+<p>Hi Everybody, I'm Mark! and I'm the proud creator of this magic item :smirk:
+For every info about the code, the possibile improve on the code/feature, or for every eventualy error, look for me on
+Skype, Linkedin, GitHub, Slack, and if you know that, on my prefered pub lol!</p>
