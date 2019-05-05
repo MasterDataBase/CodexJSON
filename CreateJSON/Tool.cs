@@ -54,11 +54,11 @@ namespace CreateJSON
         //Necessario per leggere da Console più char dei 2048 massimi
         public static string ReadLine()
         {
+            Console.WriteLine("Eccoci");
             int READLINE_BUFFER_SIZE = 8019;
             Stream inputStream = Console.OpenStandardInput(READLINE_BUFFER_SIZE);
             byte[] bytes = new byte[READLINE_BUFFER_SIZE];
             int outputLength = inputStream.Read(bytes, 0, READLINE_BUFFER_SIZE);
-            //Console.WriteLine(outputLength);
             char[] chars = Encoding.UTF7.GetChars(bytes, 0, outputLength);
             return new string(chars);
         }

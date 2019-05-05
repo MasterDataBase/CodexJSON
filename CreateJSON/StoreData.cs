@@ -78,9 +78,9 @@ namespace CreateJSON
 
             Console.WriteLine("Qauli materiali usa l'incantesimo?");
             Console.WriteLine("Inserisci un ingrediente per riga, digita ENTER per chiudere la riga o '!' in una riga a parte per chiudere la lista");
-            x = Console.ReadLine();
-            while (x != "!")
-            {
+            // Recipe list
+            x = Tool.ReadLine();
+            while (x != "!"){
                 material.Add(x);
             }
 
